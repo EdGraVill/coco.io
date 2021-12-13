@@ -2,6 +2,7 @@
 import type { MongoServerError } from 'mongodb';
 import type { Document, Error as Errors, Model, NativeError, SchemaDefinition, SchemaOptions } from 'mongoose';
 import mongoose, { Schema } from 'mongoose';
+import type { AccountModel } from './Account';
 import type { ExtractMethods, ExtractStatics, InterfaceToSchema, SchemaLayer } from './types';
 
 export const createSchema = (

@@ -4,10 +4,12 @@ import type { AccountDocument } from './model';
 import type { AccountSchemaType } from './schema';
 
 export const addAccountMethods = methodsAdditor<AccountSchemaType, AccountDocument>({
-  regenerateRSAKeys() {
+  async regenerateRSAKeys() {
     const keychain = new NodeRSA({ b: 2048 });
 
     this.RSA.privateKey = keychain.exportKey('private');
     this.RSA.publicKey = keychain.exportKey('public');
+
+    return this.save();
   },
 });

@@ -9,7 +9,7 @@ addAccountMethods(AccountSchema);
 addAccountStatics(AccountSchema);
 
 export interface AccountDocument extends Document, AccountSchemaType {
-  regenerateRSAKeys(): void;
+  regenerateRSAKeys(): Promise<AccountDocument>;
 }
 
 export interface AccountModel extends Model<AccountDocument> {

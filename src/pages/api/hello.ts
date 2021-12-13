@@ -1,4 +1,4 @@
-import { connectToDB } from '@db/methods';
+import { connectToDB } from '@db/interfaces';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
