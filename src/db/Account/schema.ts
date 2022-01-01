@@ -12,6 +12,7 @@ export type AccountSchemaType = SchemaLayer<{
   };
   email: string;
   firstName: string;
+  isAdmin: boolean;
   lastName: string;
   password: string;
 }>;
@@ -34,6 +35,10 @@ export const accountSchemaDefinition: InterfaceToSchema<AccountSchemaType> = {
   firstName: {
     required: true,
     type: Schema.Types.String,
+  },
+  isAdmin: {
+    default: false,
+    type: Schema.Types.Boolean,
   },
   lastName: {
     required: true,

@@ -109,3 +109,7 @@ export function staticsAdditor<D extends Document, M extends Model<D>>(methodsMa
     }
   };
 }
+
+export function getRandomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min)) + min;
+}

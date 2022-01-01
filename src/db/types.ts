@@ -22,9 +22,11 @@ export type InterfaceToSchema<I> = {
     : SchemaTypeOptions<any> | Schema | SchemaType;
 };
 
-export type SchemaLayer<S extends Record<string, any>> = S & {
+export type SchemaLayerBase = {
   timestamps: Timestamps;
 };
+
+export type SchemaLayer<S extends Record<string, any>> = S & SchemaLayerBase;
 
 export type ExtractMethods<S extends SchemaLayer<Record<string, unknown>>, D extends Document> = {
   // @ts-ignore
